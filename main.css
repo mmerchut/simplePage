@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+  background-color: #ffffff;
+  font-family: "Sora", sans-serif;
+}
+
+nav {
+  grid-area: nav;
+}
+header {
+  grid-area: header;
+}
+.teaser {
+  grid-area: teaser;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
+.team {
+  grid-area: team;
+}
+footer {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+
+  grid-template-areas:
+    "nav"
+    "header"
+    "teaser"
+    "main"
+    "aside"
+    "team"
+    "footer";
+  grid-gap: 0.5rem;
+  padding: 0.25rem;
+}
+
+@media only screen and (min-width: 550px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "nav nav"
+      "header header"
+      "teaser teaser"
+      "main main"
+      "aside ."
+      "team team"
+      "footer footer";
+    grid-gap: 0.75rem;
+    padding: 0.5rem;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "nav nav nav"
+      "header header header"
+      "teaser teaser teaser"
+      "aside main main"
+      "team team team"
+      "footer footer footer";
+
+    grid-gap: 0px;
+    padding: 0.75rem;
+  }
+}
+
+.grid-box {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+}
+
+@media only screen and (min-width: 550px) {
+  .grid-box {
+    padding: 0.75rem;
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .grid-box {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.footer-box-1 {
+  grid-area: footer-box-1;
+}
+.footer-box-2 {
+  grid-area: footer-box-2;
+}
+.footer-box-3 {
+  grid-area: footer-box-3;
+}
+.footer-box-4 {
+  grid-area: footer-box-4;
+}
+
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "footer-box-1 footer-box-2"
+    "footer-box-3 footer-box-4";
+  grid-gap: 1rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .sub-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "footer-box-1 footer-box-2 footer-box-3 footer-box-4";
+  }
+}
+
+.sub-grid-box {
+  padding: 0.5rem;
+  background-color: #ffffff;
+  color: rgb(83, 82, 82);
+}
+
+.grid-nav-main {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(75px, 1fr));
+  grid-gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+@media only screen and (min-width: 380px) {
+  .grid-nav-main {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+}
+@media only screen and (min-width: 550px) {
+  .grid-nav-main {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  }
+}
+
+.grid-nav-main a {
+  display: block;
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background: #ffffff;
+  color: #333;
+  transition: all 0.75s ease;
+}
+.grid-nav-main a:hover {
+  background-color: rgb(161, 84, 84);
+  color: #d3d3d3;
+}
+
+@media only screen and (min-device-width: 800px) {
+  .grid-nav-main a {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .aside_img {
+    display: none;
+  }
+  .header {
+    background-image: url(img/vineyard.jpg);
+    height: 300px;
+  }
+}
+
+.teaser {
+  background-color: #ffffff;
+  color: #141313;
+}
+main {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+aside {
+  background-color: #ffffff;
+  color: #0c0c0c;
+}
+.team {
+  background-color: #ffffff;
+  color: #131111;
+  margin: auto;
+  text-align: center;
+}
+
+footer {
+  background-color: #ffffff;
+  margin-top: 50px;
+  text-align: center;
+}
+header {
+  background-color: #ffffff;
+  background-image: url(img/vineyard.jpg);
+  background-size: cover;
+  height: 800px;
+}
+
+.header_text {
+  text-align: center;
+  padding-top: 200px;
+  color: #ffffff;
+  font-size: 80px;
+}
+
+.aside_img {
+  width: 400px;
+}
